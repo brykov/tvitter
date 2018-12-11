@@ -1,0 +1,50 @@
+.mdl-flash-message {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 100%;
+  margin: 10px 0;
+  border: none;
+  min-height: 40px;
+  padding: 10px;
+  max-height: 1000px;
+  z-index: 3;
+  background-color: rgb(145, 145, 145);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: max-height, box-shadow;
+  text-align: center;
+}
+
+.mdl-flash-message__notice {
+  background-color: rgb(34, 150, 243);
+}
+
+.mdl-flash-message__alert {
+  background-color: rgb(232, 29, 100);
+}
+
+#error_explanation {
+  color: rgb(232, 29, 100);
+  h2 {
+    font-size: 120%;
+    line-height: 130%;
+    font-weight: bold;
+    margin: 0;
+  }
+}

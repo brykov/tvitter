@@ -1,0 +1,6 @@
+= form_for Tvit.new, url: :tvits, method: :post do |f|
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--full-width
+    = f.text_area :status, rows: 2, maxlength: 140, class: 'mdl-textfield__input'
+    = f.label :status, 'Tvit something...', class: 'mdl-textfield__label'
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--full-width
+    = f.submit 'Tvit!', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'

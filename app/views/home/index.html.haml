@@ -1,0 +1,4 @@
+%h1 Latest tvits
+
+- @tvits.each do |tvit|
+  = render partial: 'shared/tvit', locals: {tvit: tvit}

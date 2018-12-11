@@ -1,0 +1,9 @@
+.tvit
+  .tvit-header
+    = link_to tvit.user do
+      %strong #{tvit.user.name}
+      @#{tvit.user.username}
+    &#x2729; #{time_ago_in_words tvit.created_at} ago
+  .tvit-body
+    = tvit.status
+  .tvit-date

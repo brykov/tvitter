@@ -1,0 +1,6 @@
+%h1
+  %strong #{@user.name}
+  @#{@user.username}
+
+- @tvits.each do |tvit|
+  = render partial: 'shared/tvit', locals: {tvit: tvit}

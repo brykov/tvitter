@@ -1,0 +1,26 @@
+.tvit + .tvit {
+  border-top: 1px solid rgb(227, 227, 227);
+}
+
+.tvit {
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.tvit-header {
+  color: rgb(150, 150, 150);
+  a {
+    display: inline-block;
+    margin-right: .5em;
+    color: rgb(150, 150, 150);
+    text-decoration: none;
+    &:hover strong {
+      color: rgb(34, 150, 243);
+      text-decoration: underline;
+    }
+  }
+}
+
+.tvit-body {
+  margin: 5px 0;
+}

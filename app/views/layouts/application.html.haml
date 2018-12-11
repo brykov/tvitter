@@ -1,0 +1,88 @@
+!!!
+%html
+  %head
+    %title Tvitter
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      %header.mdl-layout__header
+        .mdl-layout__header-row
+          %span.mdl-layout-title
+            = link_to 'Tvitter', :root
+          .mdl-layout-spacer
+          %nav.mdl-navigation
+            - if current_user
+              = link_to 'Your profile', :profile, class: 'mdl-navigation__link'
+              = link_to 'Log out', :destroy_user_session, class: 'mdl-navigation__link', method: :delete
+            - else
+              = link_to 'Sign up', :new_user_registration, class: 'mdl-navigation__link'
+              = link_to 'Log in', :new_user_session, class: 'mdl-navigation__link'
+
+
+      %main
+        .page-content
+          - if notice
+            %p.mdl-flash-message.mdl-flash-message__notice= notice
+          - if alert
+            %p.mdl-flash-message.mdl-flash-message__alert= alert
+          .mdl-grid
+            .mdl-cell.mdl-cell--6-col.mdl-cell--3-offset-desktop.mdl-cell--1-offset-tablet
+              - if current_user
+                = render partial: 'shared/tvit_form'
+              = yield
+
+
+      %footer.mdl-mega-footer
+        .mdl-mega-footer__middle-section
+          .mdl-mega-footer__drop-down-section
+            %h1.mdl-mega-footer__heading Features
+            %ul.mdl-mega-footer__link-list
+              %li
+                %a{:href => "#"} About
+              %li
+                %a{:href => "#"} Terms
+              %li
+                %a{:href => "#"} Partners
+              %li
+                %a{:href => "#"} Updates
+          .mdl-mega-footer__drop-down-section
+            %h1.mdl-mega-footer__heading Details
+            %ul.mdl-mega-footer__link-list
+              %li
+                %a{:href => "#"} Specs
+              %li
+                %a{:href => "#"} Tools
+              %li
+                %a{:href => "#"} Resources
+          .mdl-mega-footer__drop-down-section
+            %h1.mdl-mega-footer__heading Technology
+            %ul.mdl-mega-footer__link-list
+              %li
+                %a{:href => "#"} How it works
+              %li
+                %a{:href => "#"} Patterns
+              %li
+                %a{:href => "#"} Usage
+              %li
+                %a{:href => "#"} Products
+              %li
+                %a{:href => "#"} Contracts
+          .mdl-mega-footer__drop-down-section
+            %h1.mdl-mega-footer__heading FAQ
+            %ul.mdl-mega-footer__link-list
+              %li
+                %a{:href => "#"} Questions
+              %li
+                %a{:href => "#"} Answers
+              %li
+                %a{:href => "#"} Contact us
+        .mdl-mega-footer__bottom-section
+          .mdl-logo Copyright &copy; Tvitter, 2018
+          %ul.mdl-mega-footer__link-list
+            %li
+              %a{:href => "#"} Help
+            %li
+              %a{:href => "#"} Privacy  Terms
